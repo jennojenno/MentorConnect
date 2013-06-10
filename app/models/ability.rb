@@ -7,9 +7,7 @@ class Ability
     if user.role? :super_admin
       can :manage, :all
     elsif user.role? :mentor
-      can :manage, Courses do |courses| 
-        courses.try(:owner) == user 
-      end 
+      can :manage, Courses :active => true, :user_id => user.id
       can :read, :all 
     elsif user.role? :learner
       can :read, :all 

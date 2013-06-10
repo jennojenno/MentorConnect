@@ -1,0 +1,35 @@
+<h1>My Account </h1> <%= link_to 'Edit my account or password', edit_user_path(@user) %>
+
+<p>
+  <b>Email:</b>
+  <%= @user.email %>
+</p>
+
+
+
+ <h1>My Offered Courses</h1>
+
+<table>
+  <tr>
+    <th>Category</th>
+    <th>Title</th>
+    <th>Online?</th>
+    <th>In Person?</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @courses.each do |list| %>
+  <tr>
+    <td><%= list.category %></td>
+    <td><%= list.title %></td>
+    <td><%= list.online %></td>
+    <td><%= list.in_person %></td>
+
+  </tr>
+
+<% end %>
+
+
+</table>
