@@ -7,29 +7,33 @@
 
 
 
- <h1>My Offered Courses</h1>
+ <h2>My Offered Courses</h2>
 
-<table>
-  <tr>
-    <th>Category</th>
-    <th>Title</th>
-    <th>Online?</th>
-    <th>In Person?</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<% if @courses.empty? == false %>
+  <table>
+    <tr>
+      <th>Category</th>
+      <th>Title</th>
+      <th>Online?</th>
+      <th>In Person?</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
 
-<% @courses.each do |list| %>
-  <tr>
-    <td><%= list.category %></td>
-    <td><%= list.title %></td>
-    <td><%= list.online %></td>
-    <td><%= list.in_person %></td>
+  <% @courses.each do |list| %>
+    <tr>
+      <td><%= list.category %></td>
+      <td><%= list.title %></td>
+      <td><%= list.online %></td>
+      <td><%= list.in_person %></td>
+      <td><%= link_to 'Show', user_mentoring_path(@user, list.id) %></td>
+      <td><%= link_to 'Edit', edit_user_mentoring_path(@user, list.id) %></td>
+    </tr>
+  <% end %>
 
-  </tr>
+  </table>
 
-<% end %>
-
-
-</table>
+<% else %> 
+You have no courses at this time. 
+<% end %> 

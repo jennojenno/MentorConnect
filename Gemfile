@@ -15,6 +15,7 @@ group :test do
 end 
 
 gem 'cancan'
+gem 'pry'
 
 
 # Gems used only for assets and not required
