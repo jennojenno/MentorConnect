@@ -7,6 +7,14 @@ gem 'rails', '3.2.13'
 
 gem 'pg'
 gem 'devise'
+group :test do 
+  gem 'cucumber-rails'
+  #gem 'cucumber'
+  gem 'poltergeist'
+  gem 'database_cleaner'
+end 
+
+gem 'cancan'
 
 
 # Gems used only for assets and not required

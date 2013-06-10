@@ -11,3 +11,45 @@
  *= require_self
  *= require_tree .
  */
+
+html {
+  margin-right: 1em;
+  margin-left: 1em;
+}
+
+body {
+  margin-left:0px;
+  margin-right:0px;
+  width: 100%;
+
+}
+
+#container {
+  width: 100%;
+}
+
+#menubar {
+  background-color: beige;
+  height: 3.5em;
+  text-align: right;
+  border-radius: 8px;
+  padding-right: 10px;
+  padding-top: 1em;
+}
+
+#menu {
+  height: 2em;
+}
+
+#largebutton {
+  width: 85%;
+  height: 8em;
+  background-color: red;
+  border-radius: 8px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+#buttontext {
+  font-size: 250%;
+}
