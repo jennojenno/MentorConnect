@@ -163,6 +163,9 @@ Devise.setup do |config|
 
   # Time interval to unlock the account if :time is enabled as unlock_strategy.
   # config.unlock_in = 1.hour
+  require "omniauth-google-oauth2"
+  OpenSSL::SSL::VERIFY_PEER = OpenSSL::SSL::VERIFY_NONE if Rails.env.development? 
+  config.omniauth :google_oauth2, "96946685694.apps.googleusercontent.com", "EWClURS3De5PAAvYLduCTR7u", { access_type: "offline", approval_prompt: "" }
 
   # ==> Configuration for :recoverable
   #

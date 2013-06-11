@@ -1,19 +1,6 @@
 MentorConnect::Application.routes.draw do
-  get "mentorings/index"
 
-  get "mentorings/create"
-
-  get "mentorings/new"
-
-  get "mentorings/edit"
-
-  get "mentorings/show"
-
-  get "mentorings/update"
-
-  get "mentorings/destroy"
-
-  devise_for :users
+  devise_for :users, controllers: {omniauth_callbacks: "omniauth_callbacks"}
   resources :users, :only => [:show, :index, :edit] do 
     resources :mentorings, :path => "mentoring"
     resources :learning
