@@ -13,8 +13,6 @@ class UsersController < ApplicationController
     #@course = Course.find_by_user_id(params[:id])
     @courses = Course.where(:user_id => params[:id])
     #@courses = Course.all
-    binding.pry
-
     # respond_to do |format|
     #   format.html # show.html.erb
     #   format.json { render json: @user }

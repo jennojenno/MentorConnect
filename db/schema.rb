@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130610182728) do
+ActiveRecord::Schema.define(:version => 20130610205035) do
 
   create_table "courses", :force => true do |t|
     t.datetime "created_at", :null => false
@@ -50,6 +50,10 @@ ActiveRecord::Schema.define(:version => 20130610182728) do
     t.datetime "updated_at",                             :null => false
     t.boolean  "is_mentor"
     t.boolean  "is_student"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.string   "ip"
+    t.integer  "zipcode"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
