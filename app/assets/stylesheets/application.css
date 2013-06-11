@@ -24,6 +24,11 @@ body {
 
 }
 
+#map-canvas {
+  height: 400px;
+  width: 600px;
+}
+
 #container {
   width: 100%;
 }

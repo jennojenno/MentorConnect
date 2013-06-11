@@ -4,6 +4,11 @@
   <b>Email:</b>
   <%= @user.email %>
 </p>
+<p>
+  <b>Zipcode:</b>
+  <%= @user.zipcode %>, <div id="lat"><%= @user.latitude %></div> | <div id="long"><%= @user.longitude %></div>
+</p>
+
 
 
 
@@ -37,3 +42,17 @@
 <% else %> 
 You have no courses at this time. 
 <% end %> 
+
+
+
+<script type="text/javascript">
+
+$(document).ready(function() {
+    initialize();
+
+
+
+});
+</script> 
+
+<div id="map-canvas"></div>

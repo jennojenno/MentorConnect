@@ -9,4 +9,7 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
         redirect_to new_user_registration_url
       end
   end 
+  def google_oauth2_info
+    raise request.env["omniauth.auth"].to_yaml
+  end
 end 
