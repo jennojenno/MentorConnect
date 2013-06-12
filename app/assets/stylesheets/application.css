@@ -13,15 +13,13 @@
  */
 
 html {
-  margin-right: 1em;
-  margin-left: 1em;
+  
 }
 
 body {
-  margin-left:0px;
-  margin-right:0px;
+  
   width: 100%;
-
+  background-image:url('citybg.jpg');
 }
 
 #map-canvas {
@@ -30,7 +28,11 @@ body {
 }
 
 #container {
-  width: 100%;
+  margin-right: 1em;
+  margin-left: 1em;
+  width: 95%;
+  margin: 0 auto; 
+  position: relative;
 }
 
 #menubar {
@@ -40,6 +42,7 @@ body {
   border-radius: 8px;
   padding-right: 10px;
   padding-top: 1em;
+  opacity:0.9;
 }
 
 #menu {
@@ -51,10 +54,4 @@ body {
   height: 8em;
   background-color: #666;
   border-radius: 8px;
-  margin-right: auto;
-  margin-left: auto;
-}
-
-#buttontext {
-  font-size: 250%;
 }

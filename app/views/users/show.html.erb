@@ -1,4 +1,13 @@
-<h1>My Account </h1> <%= link_to 'Edit my account or password', edit_user_path(@user) %>
+<script>
+  $(document).ready(function() {
+    var lat = <%= @user.latitude %>;
+    var lng = <%= @user.longitude %>;
+    showMap(lat, lng);
+  });
+</script>
+
+
+<h1>User Info</h1> <%#= link_to 'Edit my account or password', edit_user_path(@user) %>
 
 <p>
   <b>Email:</b>
@@ -6,9 +15,9 @@
 </p>
 <p>
   <b>Zipcode:</b>
-  <%= @user.zipcode %>, <div id="lat"><%= @user.latitude %></div> | <div id="long"><%= @user.longitude %></div>
+  <%= @user.zipcode %> <div id="lat"><%= @user.latitude %></div>
+  <div id="long"><%= @user.longitude %></div>
 </p>
-
 
 
 
@@ -43,16 +52,9 @@
 You have no courses at this time. 
 <% end %> 
 
+  <script type="text/javascript"
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCGWlVKhl5vwogbFLmGgZF5-EIh3WUfg-8&sensor=false">
+  </script>
 
-
-<script type="text/javascript">
-
-$(document).ready(function() {
-    initialize();
-
-
-
-});
-</script> 
 
 <div id="map-canvas"></div>
