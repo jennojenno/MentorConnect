@@ -1,3 +1,6 @@
+<BR />
+<div id="login">
+
 <h2>Sign in</h2>
 
 <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
@@ -17,3 +20,4 @@
 <%= render "devise/shared/links" %>
 
 <%= link_to "Sign in with Google", user_omniauth_authorize_path(:google_oauth2) %>
+</div>
