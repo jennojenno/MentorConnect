@@ -24,7 +24,12 @@ body {
 
 #map-canvas {
   height: 400px;
-  width: 600px;
+  width: 100%;
+}
+
+#map-canvas2 {
+  height: 400px;
+  width: 100%;
 }
 
 #container {

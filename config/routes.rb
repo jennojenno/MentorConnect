@@ -11,4 +11,9 @@ MentorConnect::Application.routes.draw do
   end 
 
   root :to => "home#index"
+  get "home/map"
+  #get "home/mentors", :path => "mentors", :controller => "home"
+
+  match "/mentors" => "home#mentors", :as => :mentors
+
 end

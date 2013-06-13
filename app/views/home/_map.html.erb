@@ -1,0 +1,26 @@
+<script>
+$(document).ready(function() {
+
+
+    $(function() {
+    initMap();
+    users = <%=raw(User.all.to_json) %>
+
+    <% User.all.each do |user| %>
+    <% if (user.latitude || user.longitude) != nil %> 
+      addMarker(<%=user.latitude%>, <%=user.longitude%>);
+      <% end %>
+    <% end %>
+
+  });
+});
+</script>
+
+<div id="map-canvas">
+
+</div>
+
+<script>
+</script>
+
+

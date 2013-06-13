@@ -1,7 +1,29 @@
+var map; 
+ 
+function initMap() {
+   var mapOptions = {
+   center: new google.maps.LatLng(40.7736154, -73.9711057),
+   zoom:12,
+   mapTypeId: google.maps.MapTypeId.ROADMAP
+   };
+
+ map = new google.maps.Map($("#map-canvas")[0], mapOptions);
+ }
+
+function addMarker(latitude, longitude, title) {
+  var marker = new google.maps.Marker({
+    position:new google.maps.LatLng(latitude, longitude), 
+    map : map, 
+    draggable:true,
+    animation: google.maps.Animation.DROP,
+    title : title
+  });
+}
 
 
 
-// $(document).ready(function() {
+
+
 function showMap(lat, lng) {
 
 var nyc = new google.maps.LatLng(40.7143528, -74.00597309999999);
@@ -13,7 +35,7 @@ function initialize() {
   var mapOptions = {
     zoom: 14,
     mapTypeId: google.maps.MapTypeId.ROADMAP,
-    center: userlocation
+    center: new google.maps.LatLng(40.7736154, -73.9711057)
   };
 
   map = new google.maps.Map(document.getElementById('map-canvas'),
@@ -29,7 +51,7 @@ function initialize() {
 }
 
 var latlng = [];
-
+// function addMarker(latitude, longitude, title, whatami) {
 function addMarker(latitude, longitude, title, whatami) {
     var markerLatlng = new google.maps.LatLng(latitude, longitude);
     var markerSettings={

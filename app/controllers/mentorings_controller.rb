@@ -2,6 +2,7 @@ class MentoringsController < ApplicationController
   before_filter :authenticate_user!, :except => [:show, :index]
   
   def index
+    @courses = Course.all
   end
 
   def create
