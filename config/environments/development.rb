@@ -35,4 +35,6 @@ MentorConnect::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+  config.google_client_id = "96946685694.apps.googleusercontent.com"
+  config.google_client_secret = "EWClURS3De5PAAvYLduCTR7u"
 end

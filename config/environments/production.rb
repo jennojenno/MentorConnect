@@ -20,6 +20,9 @@ MentorConnect::Application.configure do
   # Generate digests for assets URLs
   config.assets.digest = true
 
+  config.google_client_id = "96946685694-6erkh8h9oh5d4ssrtk1sb2dn7a31tnjt.apps.googleusercontent.com"
+  config.google_client_secret = "Ia4aG0X41gBAYhn31HOCuuKo"
+
   # Defaults to nil and saved in location specified by config.assets.prefix
   # config.assets.manifest = YOUR_PATH
 

@@ -165,7 +165,7 @@ Devise.setup do |config|
   # config.unlock_in = 1.hour
   require "omniauth-google-oauth2"
   OpenSSL::SSL::VERIFY_PEER = OpenSSL::SSL::VERIFY_NONE if Rails.env.development? 
-  config.omniauth :google_oauth2, "96946685694.apps.googleusercontent.com", "EWClURS3De5PAAvYLduCTR7u", { access_type: "offline", approval_prompt: "" }
+  config.omniauth :google_oauth2, MentorConnect::Application.config.google_client_id, MentorConnect::Application.config.google_client_secret, { access_type: "offline", approval_prompt: "" }
 
   # ==> Configuration for :recoverable
   #
