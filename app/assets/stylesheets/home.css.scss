@@ -13,7 +13,7 @@
   min-width: 350px;
   margin: 20px auto;
   padding: 50px;
-  opacity:0.95;
+  opacity:1;
   border: solid #6bdd34 10px;
   -webkit-box-sizing: border-box;
      -moz-box-sizing: border-box;
@@ -36,7 +36,7 @@
   margin: 20px auto;
   padding: 50px;
   border: solid #6bdd34 10px;
-  opacity:0.95;
+  opacity:1;
   -webkit-box-sizing: border-box;
      -moz-box-sizing: border-box;
           box-sizing: border-box;
@@ -56,14 +56,21 @@
   text-align: center;
 }
 
+#maintext {
+  font-size: 2em;
+font-family: Futura, "Trebuchet MS", Arial, sans-serif;}
+
 /* Flexible iFrame */
 
 #mapcontainer {
   background-color: beige;
-  border-radius: 0px;
-  padding-right: 10px;
+  border-radius: 4px;
+  padding: 1%;
   padding-top: 1em;
-  opacity:0.9;
+  opacity:1;
+    -webkit-box-shadow: 0 8px 6px -6px black;
+     -moz-box-shadow: 0 8px 6px -6px black;
+          box-shadow: 0 8px 6px -6px black;
 }
 
 .Flexible-container {

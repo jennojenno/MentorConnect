@@ -1,3 +1,6 @@
+<BR />
+<div id="mapcontainer"> 
+
  <h2>Offered Mentoring Courses</h2>
 
   <table>
@@ -6,7 +9,7 @@
       <th>Title</th>
       <th>Online?</th>
       <th>In Person?</th>
-      <th></th>
+      <th>Instructor</th>
       <th></th>
       <th></th>
     </tr>
@@ -14,11 +17,27 @@
   <% @courses.each do |list| %>
     <tr>
       <td><%= list.category %></td>
-      <td><%= list.title %></td>
+      <td><%= link_to 'Course', course_path(list.id) %><%= list.title %></td>
       <td><%= list.online %></td>
       <td><%= list.in_person %></td>
+      <td><%= list.user_id %></td>
 
     </tr>
   <% end %>
 
   </table>
+
+<div id="onecolumn"> 
+  <div class="icondisplay">
+  <%= image_tag("diy.png") %>
+  <BR />DIY
+  </div>
+  <div id="insidetext">
+    <% @diy.each do |display| %>
+    <%= display.title %><BR />
+    <% end %> 
+  </div>
+
+</div>
+  
+</div>

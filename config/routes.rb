@@ -9,6 +9,7 @@ MentorConnect::Application.routes.draw do
     resources :mentorings, :path => "mentoring"
     resources :learning
   end 
+  resources :courses
 
   root :to => "home#index"
   get "home/map"

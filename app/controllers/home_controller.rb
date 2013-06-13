@@ -9,6 +9,8 @@ class HomeController < ApplicationController
 
   def mentors 
     @courses = Course.all
+    @diy = Course.where(:category => "DIY")
+    @music = Course.where(:category => "Music")
   end 
 
   
