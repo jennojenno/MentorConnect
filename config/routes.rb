@@ -1,5 +1,8 @@
 MentorConnect::Application.routes.draw do
 
+  resources :learners
+
+
   resources :authentications
    match '/auth/:provider/callback' => 'authentications#create'
 
@@ -16,5 +19,8 @@ MentorConnect::Application.routes.draw do
   #get "home/mentors", :path => "mentors", :controller => "home"
 
   match "/mentors" => "home#mentors", :as => :mentors
+  match "/music" => "home#music", :as => :music
+  #match "/learners" => "home#learners", :as => :learners
+  #match "/mentors/:category" => "home#mentors", :as => :mentors
 
 end

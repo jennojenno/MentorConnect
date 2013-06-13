@@ -1,0 +1,28 @@
+<BR />
+<div id="mapcontainer"> 
+
+  <div id="center">
+
+    <div id="onecolumn"> 
+      <div class="icondisplay">
+        <%= image_tag("music.png") %>
+        <BR />Music
+      </div>
+      <div id="insidetext">
+        <% @music.each do |display| %>
+        <% if display.online? %>
+        <%= image_tag("online.png") %>
+        <% end %> 
+        <% if display.in_person? %>
+        <%= image_tag("inperson.png") %>
+        <% end %> 
+        <%= link_to display.title, course_path(display.id) %>
+        
+        <BR />
+        <% end %> 
+      </div>
+
+    </div>
+    
+  </div>
+</div>

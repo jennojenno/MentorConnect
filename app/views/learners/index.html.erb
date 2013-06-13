@@ -1,0 +1,21 @@
+<BR />
+<div id="mapcontainer"> 
+ <h2>Eager Learners awaiting your tutelage</h2>
+
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Zipcode</th>
+      <th>Bio</th>
+    </tr>
+
+  <% @learners.each do |list| %>
+    <tr>
+      <td><%= list.name %></td>
+      <td><%= list.zipcode %></td>
+      <td><%= list.bio %></td>
+    </tr>
+  <% end %>
+
+  </table>
+</div>

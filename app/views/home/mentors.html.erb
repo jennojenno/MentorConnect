@@ -1,6 +1,5 @@
 <BR />
 <div id="mapcontainer"> 
-
  <h2>Offered Mentoring Courses</h2>
 
   <table>
@@ -27,17 +26,49 @@
 
   </table>
 
+<div id="center">
+
 <div id="onecolumn"> 
   <div class="icondisplay">
-  <%= image_tag("diy.png") %>
-  <BR />DIY
+    <%= image_tag("diy.png") %>
+    <BR />DIY
   </div>
   <div id="insidetext">
     <% @diy.each do |display| %>
-    <%= display.title %><BR />
+    <% if display.online? %>
+    <%= image_tag("online.png") %>
+    <% end %> 
+    <% if display.in_person? %>
+    <%= image_tag("inperson.png") %>
+    <% end %> 
+    <%= link_to display.title, course_path(display.id) %>
+    
+    <BR />
+    <% end %> 
+  </div>
+
+</div>
+
+<div id="onecolumn"> 
+  <div class="icondisplay">
+    <%= image_tag("music.png") %>
+    <BR />Music
+  </div>
+  <div id="insidetext">
+    <% @music.each do |display| %>
+    <% if display.online? %>
+    <%= image_tag("online.png") %>
+    <% end %> 
+    <% if display.in_person? %>
+    <%= image_tag("inperson.png") %>
+    <% end %> 
+    <%= link_to display.title, course_path(display.id) %>
+    
+    <BR />
     <% end %> 
   </div>
 
 </div>
   
+</div>
 </div>

@@ -44,6 +44,7 @@ body {
 }
 
 #insidetext {
+  font-family: Futura, "Trebuchet MS", Arial, sans-serif;
   position: relative;
   top: -130px;
   left: 80px;
@@ -53,6 +54,7 @@ body {
 }
 
 .icondisplay {
+  font-size: 0.9em;
   position: relative;
   display: inline-block;
   width: 100px;
@@ -73,9 +75,9 @@ body {
   display: inline-block;
   font-size: 2em;
   height: 150px;
-  background-color: green;
+  background-color: #E5FFF2;
   text-align: center;
-  width: 40%;
+  width: 45%;
   min-width: 350px;
   margin: 20px auto;
   padding: 50px;

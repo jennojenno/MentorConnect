@@ -5,6 +5,7 @@ class HomeController < ApplicationController
 
   def map 
     #render :layout => false
+    @learners = User.where(:is_student => true)
   end 
 
   def mentors 
@@ -13,6 +14,13 @@ class HomeController < ApplicationController
     @music = Course.where(:category => "Music")
   end 
 
+  def learners
+    @learners = User.where(:is_student => true)
+  end 
+
+  def music
+    @music = Course.where(:category => "Music")
+  end 
   
 
 end
