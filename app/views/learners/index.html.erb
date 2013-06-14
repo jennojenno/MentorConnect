@@ -11,7 +11,7 @@
 
   <% @learners.each do |list| %>
     <tr>
-      <td><%= list.name %></td>
+      <td><%= link_to list.name, user_url(list.id) %></td>
       <td><%= list.zipcode %></td>
       <td><%= list.bio %></td>
     </tr>
