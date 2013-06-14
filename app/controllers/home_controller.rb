@@ -6,6 +6,7 @@ class HomeController < ApplicationController
   def map 
     #render :layout => false
     @learners = User.where(:is_student => true)
+    @mentors = User.where(:is_student => nil || false )
   end 
 
   def mentors 

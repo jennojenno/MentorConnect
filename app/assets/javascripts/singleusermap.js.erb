@@ -14,6 +14,18 @@ function addMarker(latitude, longitude, title) {
   var marker = new google.maps.Marker({
     position:new google.maps.LatLng(latitude, longitude), 
     map : map, 
+    icon: '/assets/mentormarker.png',
+    draggable:true,
+    animation: google.maps.Animation.DROP,
+    title : title
+  });
+}
+
+function addLearnerMarker(latitude, longitude, title) {
+  var marker = new google.maps.Marker({
+    position:new google.maps.LatLng(latitude, longitude), 
+    map : map, 
+    icon: '/assets/learnermarker.png',
     draggable:true,
     animation: google.maps.Animation.DROP,
     title : title

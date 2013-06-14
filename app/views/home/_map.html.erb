@@ -6,9 +6,15 @@ $(document).ready(function() {
     initMap();
     users = <%=raw(User.all.to_json) %>
 
-    <% User.all.each do |user| %>
+    <% User.where(:is_student => false || nil).each do |user| %>
     <% if (user.latitude || user.longitude) != nil %> 
       addMarker(<%=user.latitude%>, <%=user.longitude%>);
+      <% end %>
+    <% end %>
+
+    <% User.where(:is_student => true).each do |user| %>
+    <% if (user.latitude || user.longitude) != nil %> 
+      addLearnerMarker(<%=user.latitude%>, <%=user.longitude%>);
       <% end %>
     <% end %>
 

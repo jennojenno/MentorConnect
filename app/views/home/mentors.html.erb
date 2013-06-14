@@ -16,10 +16,10 @@
   <% @courses.each do |list| %>
     <tr>
       <td><%= list.category %></td>
-      <td><%= link_to 'Course', course_path(list.id) %><%= list.title %></td>
+      <td><%= link_to 'Course', course_path(list.id) %> <%= list.title %></td>
       <td><%= list.online %></td>
       <td><%= list.in_person %></td>
-      <td><%= list.user_id %></td>
+      <td><%= list.user.email %></td>
 
     </tr>
   <% end %>
