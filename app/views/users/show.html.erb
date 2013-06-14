@@ -21,6 +21,26 @@
   <div id="long"><%= @user.longitude %></div>
 </p>
 
+<h2>My Saved Courses</h2>
+
+<% if @favorites.empty? == false %>
+  <table>
+    <tr>
+      <th>Course Name</th>
+    </tr>
+
+  <% @favorites.each do |list| %>
+    <tr>
+      <td><%= list.course.title %></td>
+    </tr>
+  <% end %>
+
+  </table>
+  <% else %> 
+You have no saved courses at this time. 
+<% end %> 
+
+
 
 
  <h2>My Offered Courses</h2>
@@ -43,7 +63,7 @@
       <td><%= list.title %></td>
       <td><%= list.online %></td>
       <td><%= list.in_person %></td>
-      <td><%= link_to 'Show', user_mentoring_path(@user, list.id) %></td>
+      <td><%= link_to 'Show', course_path(list.id) %> </td>
       <td><%= link_to 'Edit', edit_user_mentoring_path(@user, list.id) %></td>
     </tr>
   <% end %>

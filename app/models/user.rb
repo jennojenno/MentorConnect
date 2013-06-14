@@ -14,6 +14,7 @@ class User < ActiveRecord::Base
   has_and_belongs_to_many :roles
   has_many :courses
   has_many :authentications
+  has_many :favorites
 
   geocoded_by :zipcode
   after_validation :geocode, :if => :zipcode_changed?

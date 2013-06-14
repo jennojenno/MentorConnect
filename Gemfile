@@ -19,6 +19,7 @@ gem 'pry'
 gem 'geocoder'
 gem 'thin'
 gem 'mailboxer'
+gem 'faker'
 
 # Gems used only for assets and not required
 # in production environments by default.

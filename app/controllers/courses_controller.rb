@@ -10,7 +10,7 @@ class CoursesController < ApplicationController
     @course.user_id = current_user.id 
     respond_to do |format|
       if @course.save
-        format.html { redirect_to user_url, notice: 'course was successfully created.' }
+        format.html { redirect_to current_user, notice: 'course was successfully created.' }
         format.json { render json: user_url, status: :created, location: @course }
       else
         format.html { render action: "new" }
@@ -30,7 +30,20 @@ class CoursesController < ApplicationController
 
   def show
     @course = Course.find(params[:id])
+    @desc = Faker::Lorem.paragraph(20)
+    @user = Course.find(params[:id]).user
   end
+
+  def favorites
+    fav = Favorite.new(course_id: params[:id], user_id: current_user.id)
+    fav.save
+    redirect_to Course.find(params[:id]), notice: 'Course has been favorited!'
+  end 
+
+  # def userfavorites
+  #   @user = User.find(params[:id])
+  #   @favorites = Favorite.where(:user_id => current_user)
+  # end 
 
   def update
     @course = Course.find(params[:id])

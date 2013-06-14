@@ -8,11 +8,10 @@ class HomeController < ApplicationController
     @learners = User.where(:is_student => true)
     @mentors = User.where(:is_student => nil || false )
   end 
-
   def mentors 
     @courses = Course.all
-    @diy = Course.where(:category => "DIY")
-    @music = Course.where(:category => "Music")
+    @diy = Course.where(:category => "DIY").last(3)
+    @music = Course.where(:category => "Music").last(3)
   end 
 
   def learners
@@ -21,6 +20,10 @@ class HomeController < ApplicationController
 
   def music
     @music = Course.where(:category => "Music")
+  end 
+
+  def diy
+    @diy = Course.where(:category => "DIY")
   end 
   
 

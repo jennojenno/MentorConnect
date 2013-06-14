@@ -10,7 +10,8 @@ class MentoringsController < ApplicationController
     @user = User.find(params[:user_id])
     respond_to do |format|
       if @course.save
-        format.html { redirect_to @course, notice: 'course was successfully created.' }
+        binding.pry
+        format.html { redirect_to user_url, notice: 'course was successfully created.' }
         format.json { render json: @course, status: :created, location: @course }
       else
         format.html { render action: "new" }

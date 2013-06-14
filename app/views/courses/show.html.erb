@@ -1,8 +1,30 @@
+
+<% if @course.user.latitude != nil %>
+<script>
+  $(document).ready(function() {
+    var lat = <%= @user.latitude %>;
+    var lng = <%= @user.longitude %>;
+    showMap(lat, lng);
+  });
+</script>
+<% end %>
+
 <BR />
 <div id="mapcontainer"> 
 
-<h1>Offered Course</h1>
+<div id="parent">
+<h1><%= @course.title %></h1>
 
-<%= @course.title %>
+<div id="fave">
+<%= link_to ".", favorites_path(id: @course.id) %>
+</div>
+<i>Taught by <%= @course.user.name %></i>
 
+</div>
+<%= @desc %>. 
+
+
+
+</div>
+<div id="map-canvas"></div>
 </div>

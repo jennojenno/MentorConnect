@@ -38,6 +38,27 @@ body {
   margin-right: auto;
 }
 
+#fave {
+  float: left;
+  width: 33px;
+  height: 30px;
+  background-color: white;
+  border-radius: 6px;
+  text-align: center;
+  display: table-cell;
+  vertical-align: middle;
+  padding-top: 7px;
+  background:transparent url('heart-unfaved.png') center top no-repeat;
+}
+
+#fave:hover {
+  background-image: url('heart-faved.png');
+}
+
+#parent {
+  display: table;
+}
+
 .icon {
   display: inline-block;
   width: 100px;

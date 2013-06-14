@@ -20,6 +20,10 @@ MentorConnect::Application.routes.draw do
 
   match "/mentors" => "home#mentors", :as => :mentors
   match "/music" => "home#music", :as => :music
+  match "/diy" => "home#diy", :as => :diy
+
+  match "/favorites" => "courses#favorites", :as => :favorites
+  match "/:user_id/favorites" => "courses#userfavorites", :as => :user_favorites
   #match "/learners" => "home#learners", :as => :learners
   #match "/mentors/:category" => "home#mentors", :as => :mentors
 
