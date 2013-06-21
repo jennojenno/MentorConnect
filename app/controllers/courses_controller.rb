@@ -31,7 +31,7 @@ class CoursesController < ApplicationController
   def show
     @course = Course.find(params[:id])
     @desc = Faker::Lorem.paragraph(20)
-    @user = Course.find(params[:id]).user
+    @user = @course.user
   end
 
   def favorites

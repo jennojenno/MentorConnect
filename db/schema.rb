@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130614004756) do
+ActiveRecord::Schema.define(:version => 20130621173429) do
 
   create_table "authentications", :force => true do |t|
     t.integer  "user_id"
@@ -57,6 +57,16 @@ ActiveRecord::Schema.define(:version => 20130614004756) do
   create_table "mentors", :force => true do |t|
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "messages", :force => true do |t|
+    t.integer  "sender_id"
+    t.integer  "recipient_id"
+    t.text     "body"
+    t.string   "subject"
+    t.boolean  "read",         :default => false
+    t.datetime "created_at",                      :null => false
+    t.datetime "updated_at",                      :null => false
   end
 
   create_table "notifications", :force => true do |t|
@@ -136,9 +146,5 @@ ActiveRecord::Schema.define(:version => 20130614004756) do
 
   add_index "users_have_and_belong_to_many_roles", ["role_id"], :name => "index_users_have_and_belong_to_many_roles_on_role_id"
   add_index "users_have_and_belong_to_many_roles", ["user_id"], :name => "index_users_have_and_belong_to_many_roles_on_user_id"
-
-  add_foreign_key "notifications", "conversations", :name => "notifications_on_conversation_id"
-
-  add_foreign_key "receipts", "notifications", :name => "receipts_on_notification_id"
 
 end

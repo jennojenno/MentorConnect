@@ -1,5 +1,6 @@
 MentorConnect::Application.routes.draw do
 
+
   resources :learners
 
 
@@ -11,6 +12,7 @@ MentorConnect::Application.routes.draw do
   resources :users, :only => [:show, :index, :edit] do 
     resources :mentorings, :path => "mentoring"
     resources :learning
+    resources :messages
   end 
   resources :courses
 

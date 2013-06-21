@@ -31,7 +31,7 @@
 
   <% @favorites.each do |list| %>
     <tr>
-      <td><%= list.course.title %></td>
+      <td><%= link_to list.course.title, course_path(list.course.id) %></td>
     </tr>
   <% end %>
 
