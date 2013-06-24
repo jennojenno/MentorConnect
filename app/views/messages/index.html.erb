@@ -1,0 +1,25 @@
+<BR />
+<div id="mapcontainer"> 
+
+  <h2>Messages</h2> 
+
+  Conversations started by you <i>(click to open)</i>
+  <div id="accordion">
+  <% @sent.each do |a| %> 
+  <h3 id="acc"><%= a.subject %></h3>
+  <div STYLE="font-weight: bold; margin-left: 30px; background-color: white; width: 45%; padding: 8px;">
+  Sent to <%= a.recipient_id %><hr />
+  <p  STYLE="font-weight: normal; margin-left: 30px; background-color: white; width: 45%; padding: 8px;"><%= a.body %></p>
+  </div>
+  <% end %> 
+  </div>
+
+  <hr>
+  Messages Received 
+  <% @rcvd.each do |a| %> 
+  <%= a.recipient_id %> said: 
+  <%= a.subject %>
+  <%= a.body %>
+  <% end %> 
+
+</div>

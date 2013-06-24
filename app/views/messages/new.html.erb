@@ -14,7 +14,8 @@
     </div>
   <% end %>
 
-  <%= f.hidden_field :recipient_id, :value=>@instructor.id %> 
+  <%= f.hidden_field :recipient_id, :value=> @instructor.id %> 
+  <%= f.hidden_field :sender_id, :value=> current_user.id %>
 
 
   <div class="field">

@@ -16,6 +16,18 @@ html {
   
 }
 
+#accordion > h3 {
+  width: 50%;
+  color: blue;
+  background-color: white;
+  padding: 10px;
+}
+
+#msginside {
+  color: blue;
+}
+
+
 body {
   font-family: Futura, "Trebuchet MS", Arial, sans-serif;
   width: 100%;

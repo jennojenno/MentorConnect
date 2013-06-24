@@ -19,6 +19,9 @@ gem 'pry'
 gem 'geocoder'
 gem 'thin'
 gem 'faker'
+gem 'better_errors'
+gem 'binding_of_caller'
+gem 'jquery-ui-rails'
 
 # Gems used only for assets and not required
 # in production environments by default.
