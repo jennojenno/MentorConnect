@@ -6,7 +6,13 @@ class MessagesController < ApplicationController
 
   def index
     @sent = Message.where(:sender_id => current_user.id)
+    @sentdesc = @sent.order('created_at DESC').all
+    #look up a.recipient_id in users table, get their name 
+    # @senttouser = User.find(@rcvd.id)
+
     @rcvd = Message.where(:recipient_id => current_user.id)
+    @rcvddesc = @rcvd.order('created_at DESC').all
+
   end 
 
   def create

@@ -1,31 +1,3 @@
-<script>
-$(document).ready(function() {
-
-
-    $(function() {
-    initMap();
-    users = <%=raw(User.all.to_json) %>
-
-    <% User.where(:is_student => false || nil).each do |user| %>
-    <% if (user.latitude && user.longitude) != nil %> 
-      addMarker(<%=user.latitude%>, <%=user.longitude%>);
-      <% end %>
-    <% end %>
-
-    <% User.where(:is_student => true).each do |user| %>
-    <% if (user.latitude && user.longitude) != nil %> 
-      addLearnerMarker(<%=user.latitude%>, <%=user.longitude%>);
-      <% end %>
-    <% end %>
-
-  });
-});
-</script>
-<div id="map-canvas">
-
-</div>
-<BR><BR>
-
 <div id="iconcontainer">
 <div class="icon">
 <%= image_tag("art.png") %>
@@ -53,6 +25,32 @@ $(document).ready(function() {
 </div>
 </div>
 
-<BR>
+<BR><BR>
+<script>
+$(document).ready(function() {
+
+
+    $(function() {
+    initMap();
+    users = <%=raw(User.all.to_json) %>
+
+    <% User.where(:is_student => false || nil).each do |user| %>
+    <% if (user.latitude && user.longitude) != nil %> 
+      addMarker(<%=user.latitude%>, <%=user.longitude%>);
+      <% end %>
+    <% end %>
+
+    <% User.where(:is_student => true).each do |user| %>
+    <% if (user.latitude && user.longitude) != nil %> 
+      addLearnerMarker(<%=user.latitude%>, <%=user.longitude%>);
+      <% end %>
+    <% end %>
+
+  });
+});
+</script>
+<div id="map-canvas">
+
+</div>
 
 

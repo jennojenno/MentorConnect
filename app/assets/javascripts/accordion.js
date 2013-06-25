@@ -14,3 +14,11 @@ $(function() {
     collapsible: true
   });
 });
+
+$(function() {
+  $( "#accordion2" ).accordion({
+    heightStyle: "content",
+    active: false,
+    collapsible: true
+  });
+});

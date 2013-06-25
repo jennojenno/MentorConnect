@@ -2,29 +2,7 @@
 <div id="mapcontainer"> 
  <h2>Offered Mentoring Courses</h2>
 
-  <table>
-    <tr>
-      <th>Category</th>
-      <th>Title</th>
-      <th>Online?</th>
-      <th>In Person?</th>
-      <th>Instructor</th>
-      <th></th>
-      <th></th>
-    </tr>
 
-  <% @courses.each do |list| %>
-    <tr>
-      <td><%= list.category %></td>
-      <td><%= link_to 'Course', course_path(list.id) %> <%= list.title %></td>
-      <td><%= list.online %></td>
-      <td><%= list.in_person %></td>
-      <td><%= list.user.email %></td>
-
-    </tr>
-  <% end %>
-
-  </table>
 
 <div id="center">
 
