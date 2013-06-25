@@ -47,6 +47,12 @@ div {
   display: table;
 }
 
+h2 {
+  font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+  background-color: white;
+  padding: 15px;
+}
+
 #error_explanation {
   width: 450px;
   border: 2px solid red;
@@ -56,6 +62,7 @@ div {
   background-color: #f0f0f0;
   h2 {
     text-align: left;
+    font-family: Futura, "Trebuchet MS", Arial, sans-serif;
     font-weight: bold;
     padding: 5px 5px 5px 15px;
     font-size: 12px;
