@@ -30,7 +30,7 @@ class CoursesController < ApplicationController
 
   def show
     @course = Course.find(params[:id])
-    @desc = Faker::Lorem.paragraph(20)
+    @desc = @course.desc 
     @user = @course.user
   end
 

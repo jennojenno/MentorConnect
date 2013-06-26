@@ -11,22 +11,31 @@
 
 <BR />
 <div id="mapcontainer"> 
+<div id="userleft">
 
 <div id="parent">
 <h1><%= @course.title %></h1>
-
+<br>
 <div id="fave">
 <%= link_to ".", favorites_path(id: @course.id) %>
 </div>
 <i>Taught by <%= @course.user.name %></i>
 
-| <%= link_to "Send this mentor a message", new_user_message_path(user_id: current_user, instructor_id: @user.id) %>
-
-</div>
-<%= @desc %>. 
-
 
 
 </div>
+<%= @desc %>
+<BR><BR>
+  <center>
+<p style="font-size: 2em;"><% if user_signed_in? %> 
+  <%= link_to "Send this mentor a message", new_user_message_path(user_id: current_user, instructor_id: @user.id) %>
+  <% else %> 
+  <%= link_to "Log in", new_user_session_path %> or <%= link_to "Sign up", new_user_registration_path %> to send a message
+  <% end %>
+</p>
+  </center>
+</div>
+<div id="userright">
 <div id="map-canvas"></div>
+</div>
 </div>

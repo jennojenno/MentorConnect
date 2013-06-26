@@ -1,28 +1,31 @@
 <BR />
 <div id="mapcontainer"> 
+<BR>
+  <center>
+<table class="gradienttable">
+  <tr>
+    <th>Category</th>
+    <th>Course</th>
+    <th>Location</th>
+    <th>Taught by</th>
+    <th>Online Lessons</th>
+    <th>In-person Lessons</th>
+  </tr>
 
-  <div id="center">
+ <% @music.each do |list| %>
+    <tr>
+      <td><%= image_tag("music.png") %></td>
+      <td><%= link_to list.title, course_path(list.id) %></td>
+      <td><%= list.user.zipcode %></td>
+      <td><%= list.user.name %></td>
+      <td><% if list.online? %>Yes<% else %>No<% end %></td>
+      <td><% if list.in_person? %>Yes<% else %>No<% end %></td>
+    </tr>
+  <% end %>
 
-    <div id="onecolumn"> 
-      <div class="icondisplay">
-        <%= image_tag("music.png") %>
-        <BR />Music
-      </div>
-      <div id="insidetext">
-        <% @music.each do |display| %>
-        <% if display.online? %>
-        <%= image_tag("online.png") %>
-        <% end %> 
-        <% if display.in_person? %>
-        <%= image_tag("inperson.png") %>
-        <% end %> 
-        <%= link_to display.title, course_path(display.id) %>
-        
-        <BR />
-        <% end %> 
-      </div>
+  </table>
+</center>
+<BR><BR>
 
-    </div>
-    
-  </div>
 </div>
+

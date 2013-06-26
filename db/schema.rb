@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130625172501) do
+ActiveRecord::Schema.define(:version => 20130625212016) do
 
   create_table "authentications", :force => true do |t|
     t.integer  "user_id"
@@ -39,6 +39,8 @@ ActiveRecord::Schema.define(:version => 20130625172501) do
     t.boolean  "online"
     t.boolean  "in_person"
     t.integer  "user_id"
+    t.text     "desc"
+    t.string   "icon"
   end
 
   create_table "favorites", :force => true do |t|

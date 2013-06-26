@@ -208,7 +208,7 @@ table.gradienttable {
   font-family: verdana,arial,sans-serif;
   font-size:11px;
   color:#333333;
-  border-width: 1px;
+  border-width: 0px;
   border-color: #999999;
   border-collapse: collapse;
 }
