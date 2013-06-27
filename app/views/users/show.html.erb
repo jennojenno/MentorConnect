@@ -10,7 +10,7 @@
 <div id="mapcontainer"> 
 <div id="userleft">
 
-<h1><%= @user.name%>'s Profile</h1> 
+<h1><%= @user.name%>'s Profile</h1> (<%= link_to "edit", edit_user_registration_path %>)
 
 <p>
   <b>Registered Email:</b>
@@ -24,12 +24,20 @@
 
 <p>
   <b>About Me:</b>
+  <% if @user.bio == nil %>
+  <%= link_to "Fill me in!", edit_user_registration_path %>
+  <% else %> 
   <%= @user.bio %>
+  <% end %>
 </p>
 
 <p>
   <b>I'm good at:</b>
+  <% if @user.skills == nil %>
+  <%= link_to "Fill me in!", edit_user_registration_path %>
+  <% else %> 
   <%= @user.skills %>
+  <% end %>
 </p>
 <center>
 <% if user_signed_in? %> <b>
@@ -86,7 +94,7 @@ No saved courses at this time.
 <% else %> 
 No offered courses at this time. 
 <% end %> 
-<h3><%= link_to 'Create a New Course', new_user_mentoring_path(@user) %></h3>
+<h3><%= link_to 'Create a New Course and become a Mentor', new_user_mentoring_path(@user) %></h3>
 </div>
 <div id="userright"> <center><i><%= @user.name%> is located near:</i></center>
 <div id="map-canvas"></div>
