@@ -36,13 +36,13 @@ $(document).ready(function() {
 
     <% User.where(:is_student => true).each do |user| %>
     <% if (user.latitude && user.longitude) != nil %> 
-      addMarker(<%=user.latitude%>, <%=user.longitude%>);
+      addLearnerMarker(<%=user.latitude%>, <%=user.longitude%>);
       <% end %>
     <% end %>
 
-    <% User.where(:is_student => false || nil).each do |user| %>
+    <% User.where(:is_mentor => true).each do |user| %>
     <% if (user.latitude && user.longitude) != nil %> 
-      addLearnerMarker(<%=user.latitude%>, <%=user.longitude%>);
+      addMarker(<%=user.latitude%>, <%=user.longitude%>);
       <% end %>
     <% end %>
 
