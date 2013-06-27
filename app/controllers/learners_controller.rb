@@ -2,7 +2,7 @@ class LearnersController < ApplicationController
   # GET /learners
   # GET /learners.json
   def index
-    @learners = User.where(:is_student => true)
+    @learners = User.all
 
     respond_to do |format|
       format.html # index.html.erb
