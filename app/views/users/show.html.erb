@@ -16,11 +16,6 @@
   <b>Registered Email:</b>
   <%= @user.email %>
 </p>
-<p>
-  <b>Zipcode:</b>
-  <%= @user.zipcode %> <div id="lat"><%= @user.latitude %></div>
-  <div id="long"><%= @user.longitude %></div>
-</p>
 
 <p>
   <b>About Me:</b>
@@ -94,7 +89,7 @@ No saved courses at this time.
 <% else %> 
 No offered courses at this time. 
 <% end %> 
-<h3><%= link_to 'Create a New Course and become a Mentor', new_user_mentoring_path(@user) %></h3>
+<h3><%= link_to 'Create a New Course and become a Mentor', new_user_mentoring_path(@user) %></h3><BR><BR>
 </div>
 <div id="userright"> <center><i><%= @user.name%> is located near:</i></center>
 <div id="map-canvas"></div>

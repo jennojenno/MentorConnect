@@ -15,25 +15,33 @@
 
   <div class="field">
     <%= f.label :category %><br />
-    <%= f.text_field :category %>
+    <%= f.select :category, options_for_select([["Art", "Art"], ["Food", "Food"], ["Music", "Music"], ["Sports", "Sports"], ["DIY", "DIY"], ["Tech", "Tech"]], @course.online) %>
   </div>
   <div class="field">
     <%= f.label :title %><br />
     <%= f.text_field :title %>
   </div>
+
+
   <div class="field">
-    <%= f.label :online %><br />
-    <%= f.text_field :online %>
+    <%= f.label "Online Lessons?" %><br />
+    <%= f.select :online, options_for_select([["Yes", "true"], ["No", "false"]], @course.online) %>
   </div>
     <div class="field">
-    <%= f.label :in_person %><br />
-    <%= f.text_field :in_person %>
+    <%= f.label "In Person Lessons?" %><br />
+    <%= f.select :in_person, options_for_select([["Yes", "true"], ["No", "false"]], @course.in_person) %>
+  </div>
+
+  <div class="field">
+    <%= f.label "Description (try to include what you're seeking as well)" %><br />
+    <%= f.text_area :desc %>
   </div>
 
 
-  </div>
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
 <BR><BR>
+
+    </div>
