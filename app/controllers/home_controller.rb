@@ -5,8 +5,22 @@ class HomeController < ApplicationController
 
   def map 
     #render :layout => false
-    @learners = User.where(:is_student => true)
-    @mentors = User.where(:is_student => nil || false )
+    @learners = User.where(:is_mentor => false)
+    #@mentors = User.where(:is_student => nil || false )
+
+    #User.find(2).courses != nil
+
+    User.all.each do |x|
+      if x.courses != nil
+        x.is_mentor = true
+        binding.pry
+        x.save!
+      end 
+    end 
+
+    @mentors = User.where(:is_mentor => true )
+
+
   end 
   def mentors 
     @courses = Course.all

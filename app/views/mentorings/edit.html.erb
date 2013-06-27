@@ -1,2 +1,50 @@
-<h1>Mentorings#edit</h1>
-<p>Find me in app/views/mentorings/edit.html.erb</p>
+<BR />
+<div id="mapcontainer"> 
+<%= form_for(@course) do |f| %>
+  <% if @course.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@course.errors.count, "error") %> prohibited this course from being saved:</h2>
+
+      <ul>
+      <% @course.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= f.hidden_field :user_id %> 
+
+  <div class="field">
+    <%= f.label :category %><br />
+    <%= f.select :category, options_for_select([["Art", "Art"], ["Food", "Food"], ["Music", "Music"], ["Sports", "Sports"], ["DIY", "DIY"], ["Tech", "Tech"]], @course.online) %>
+  </div>
+  <div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </div>
+
+
+  <div class="field">
+    <%= f.label "Online Lessons?" %><br />
+    <%= f.select :online, options_for_select([["Yes", "true"], ["No", "false"]], @course.online) %>
+  </div>
+    <div class="field">
+    <%= f.label "In Person Lessons?" %><br />
+    <%= f.select :in_person, options_for_select([["Yes", "true"], ["No", "false"]], @course.in_person) %>
+  </div>
+
+  <div class="field">
+    <%= f.label "Description (try to include what you're seeking as well)" %><br />
+    <%= f.text_area :desc %>
+  </div>
+
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+<BR><BR>
+
+    </div>
+  </div>

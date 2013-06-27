@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable, :omniauth_providers => [:google_oauth2]
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :name, :bio, :skills, :password, :provider, :uid, :password_confirmation, :remember_me, :latitude, :longitude, :ip, :zipcode
+  attr_accessible :email, :name, :bio, :skills, :password, :provider, :uid, :password_confirmation, :remember_me, :latitude, :is_mentor, :is_student, :longitude, :ip, :zipcode
   # attr_accessible :title, :body
   
   has_and_belongs_to_many :roles
@@ -22,6 +22,7 @@ class User < ActiveRecord::Base
   def lat_and_long
     "#{latitude} #{longitude}"
   end
+
 
   def self.from_omniauth(auth)
     where(auth.slice(:provider, :uid)).first_or_initialize.tap do |user|
