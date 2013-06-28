@@ -26,6 +26,22 @@
 </div>
 <%= @desc %>
 <BR><BR>
+
+<b>In-person Lessons: </b> 
+<% if @course.in_person == true %>
+Yes
+<% else %> 
+No 
+<% end %> 
+<BR>
+<b>Online Lessons: </b>
+<% if @course.online == true %>
+Yes
+<% else %> 
+No 
+<% end %> 
+
+
   <center>
 <p style="font-size: 2em;"><% if user_signed_in? %> 
   <%= link_to "Send this mentor a message", new_user_message_path(user_id: current_user, instructor_id: @user.id) %>
