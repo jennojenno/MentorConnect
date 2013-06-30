@@ -27,6 +27,14 @@ class HomeController < ApplicationController
   def diy
     @diy = Course.where(:category => "DIY")
   end 
+
+  def art
+    @art = Course.where(:category => "Art")
+  end 
+
+  def food
+    @food = Course.where(:category => "Food")
+  end 
   
 
 end
