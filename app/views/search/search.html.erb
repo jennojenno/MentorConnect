@@ -1,0 +1,13 @@
+<BR />
+<div id="mapcontainer"> 
+
+<h3>Search Results</h3>
+
+<% @results.each do |course| %> 
+<div class="course"> 
+  <h3><%= course.title %> </h3>
+  <p> <%= link_to 'Read More', course_path(course.id) %> </p>
+</div>
+<% end %> 
+
+</div>

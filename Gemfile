@@ -37,9 +37,12 @@ group :assets do
 end
 
 gem 'jquery-rails'
-gem 'omniauth'
-gem 'omniauth-openid'
+#gem 'omniauth'
+#gem 'omniauth-openid'
 gem "omniauth-google-oauth2"
+gem 'thinking-sphinx', '3.0.3'
+gem 'flying-sphinx',   '1.0.0'
+gem 'mysql2',          '0.3.12b4'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

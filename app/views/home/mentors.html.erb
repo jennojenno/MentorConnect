@@ -2,7 +2,12 @@
 <div id="mapcontainer"> 
  <h2>Offered Mentoring Courses</h2>
 
-
+<div class="search-box">
+      <%= form_tag search_path do %> 
+      <%= text_field_tag :term, nil, :id => "search_box" %>
+      <%= submit_tag "search", :id => "submitbutton" %>
+      <% end %> 
+    </div>
 
 
 <table class="gradienttable">

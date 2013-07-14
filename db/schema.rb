@@ -56,6 +56,11 @@ ActiveRecord::Schema.define(:version => 20130625212016) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "mentors", :force => true do |t|
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "messages", :force => true do |t|
     t.integer  "sender_id"
     t.integer  "recipient_id"
@@ -107,9 +112,8 @@ ActiveRecord::Schema.define(:version => 20130625212016) do
   end
 
   create_table "users", :force => true do |t|
-    t.string   "email",                  :default => "",    :null => false
-    t.string   "encrypted_password",     :default => "",    :null => false
-    t.string   "zipcode",                :default => "",    :null => false
+    t.string   "email",                  :default => "", :null => false
+    t.string   "encrypted_password",     :default => "", :null => false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
@@ -118,13 +122,14 @@ ActiveRecord::Schema.define(:version => 20130625212016) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.datetime "created_at",                                :null => false
-    t.datetime "updated_at",                                :null => false
-    t.boolean  "is_mentor",              :default => false
-    t.boolean  "is_student",             :default => true
+    t.datetime "created_at",                             :null => false
+    t.datetime "updated_at",                             :null => false
+    t.boolean  "is_mentor"
+    t.boolean  "is_student"
     t.float    "latitude"
     t.float    "longitude"
     t.string   "ip"
+    t.integer  "zipcode"
     t.string   "name"
     t.string   "provider"
     t.string   "uid"
@@ -144,9 +149,5 @@ ActiveRecord::Schema.define(:version => 20130625212016) do
 
   add_index "users_have_and_belong_to_many_roles", ["role_id"], :name => "index_users_have_and_belong_to_many_roles_on_role_id"
   add_index "users_have_and_belong_to_many_roles", ["user_id"], :name => "index_users_have_and_belong_to_many_roles_on_user_id"
-
-  add_foreign_key "notifications", "conversations", :name => "notifications_on_conversation_id"
-
-  add_foreign_key "receipts", "notifications", :name => "receipts_on_notification_id"
 
 end
