@@ -93,7 +93,7 @@ No saved courses at this time.
 <% else %> 
 No offered courses at this time. 
 <% end %> 
-<h3><%= link_to 'Create a New Course and become a Mentor', new_user_mentoring_path(@user) %></h3><BR><BR>
+<h3><%= link_to 'Create a New Course and become a Mentor', new_user_mentoring_path(current_user) %></h3><BR><BR>
 </div>
 <div id="userright"> <center><i><%= @user.name%> is located near:</i></center>
 <div id="map-canvas"></div>

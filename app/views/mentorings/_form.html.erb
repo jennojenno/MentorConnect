@@ -1,5 +1,5 @@
-<BR />
-<div id="mapcontainer"> 
+
+<div id="login"> 
 <%= form_for(@course) do |f| %>
   <% if @course.errors.any? %>
     <div id="error_explanation">
@@ -35,8 +35,8 @@
   </div>
 
   <div class="field">
-    <%= f.label "Description (try to include what you're seeking as well)" %><br />
-    <%= f.text_area :desc %>
+    <%= f.label "Description:" %><br />
+    <%= f.text_area :desc, :cols => "40", :rows => "10" %>
   </div>
 
 

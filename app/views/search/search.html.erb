@@ -3,6 +3,9 @@
 
 <h3>Search Results</h3>
 
+<% if @results.count == 0 %>
+  No results. Want to <%= link_to 'teach this course', new_user_mentoring_path(current_user) %>? 
+<% else %> 
 <BR>
 <table class="gradienttable">
   <tr>
@@ -43,5 +46,5 @@
   </table>
 
   <BR><BR>
-
+  <% end %>
 </div>
