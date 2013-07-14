@@ -20,7 +20,7 @@
 <p>
   <b>About Me:</b>
   <% if @user.bio == nil %>
-  <%= link_to "Fill me in!", edit_user_registration_path %>
+  <%= link_to "Fill out your bio to show up for Mentors!", edit_user_registration_path %>
   <% else %> 
   <%= @user.bio %>
   <% end %>
@@ -29,14 +29,18 @@
 <p>
   <b>I'm good at:</b>
   <% if @user.skills == nil %>
-  <%= link_to "Fill me in!", edit_user_registration_path %>
+  <%= link_to "Fill out your skills to show up for Mentors!", edit_user_registration_path %>
   <% else %> 
   <%= @user.skills %>
   <% end %>
 </p>
+
+
+
 <center>
-<% if user_signed_in? %> <b>
+<% if user_signed_in? && current_user != @user %> <b>
   <%= link_to "Send this user a message", new_user_message_path(user_id: current_user, instructor_id: @user.id) %>
+  <% elsif user_signed_in? && current_user = @user %> 
   <% else %> 
   <%= link_to "Log in", new_user_session_path %> or <%= link_to "Sign up", new_user_registration_path %> to send a message </b>
   <% end %>

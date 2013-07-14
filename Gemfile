@@ -14,6 +14,7 @@ group :test do
   gem 'database_cleaner'
 end 
 
+gem 'foreigner'
 gem 'cancan'
 gem 'pry'
 gem 'geocoder'

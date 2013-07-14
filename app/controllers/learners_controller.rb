@@ -2,7 +2,8 @@ class LearnersController < ApplicationController
   # GET /learners
   # GET /learners.json
   def index
-    @learners = User.all
+    @users = User.where("bio is not null")
+    @learners = @users.where("skills is not null")
 
     respond_to do |format|
       format.html # index.html.erb

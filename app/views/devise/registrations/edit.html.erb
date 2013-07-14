@@ -2,6 +2,8 @@
 <BR /><div id="mapcontainer"> 
 
 <h2>Edit <%= resource_name.to_s.humanize %></h2>
+<b>** IMPORTANT: Fill out your Bio and Skills to be visible to Mentors!</b>
+<BR><BR>
 
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
   <%= devise_error_messages! %>
@@ -21,13 +23,13 @@
 
   <div><%= f.label :zipcode %><br />
   <%= f.text_field :zipcode %></div>
+<BR>
+      <div><%= f.label "Bio (describe your interests & what you want to learn):" %><br />
+  <%= f.text_area :bio, :cols => "40", :rows => "10" %></div>
 
-      <div><%= f.label :bio %><br />
-  <%= f.text_area :bio %></div>
-
-    <div><%= f.label :skills %><br />
-  <%= f.text_area :skills %></div>
-
+    <div><%= f.label "Skills (what can you offer in exchange for learning from a mentor?):" %><br />
+  <%= f.text_area :skills, :cols => "40", :rows => "10" %></div>
+<BR>
   <div><%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
   <%= f.password_field :current_password %></div>
 

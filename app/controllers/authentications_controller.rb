@@ -3,6 +3,7 @@ class AuthenticationsController < ApplicationController
   # GET /authentications.json
   def index
     @authentications = Authentication.all
+    redirect_to user_path
   end
 
   def create
