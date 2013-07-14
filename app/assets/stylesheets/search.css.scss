@@ -1,3 +1,21 @@
 // Place all the styles related to the Search controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+input#search_box {
+  color: red;
+  width: 300px;
+  height: 30px;
+  padding-left: 15px;
+}
+
+.search-box {
+  text-align: right;
+}
+
+#submitbutton {
+border-radius: 5px;
+background-color: whitesmoke;
+padding: 6px;
+font-size: 1.2em;
+}

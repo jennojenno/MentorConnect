@@ -2,14 +2,14 @@
 <div id="mapcontainer"> 
  <h2>Offered Mentoring Courses</h2>
 
-<div class="search-box">
-      <%= form_tag search_path do %> 
-      <%= text_field_tag :term, nil, :id => "search_box" %>
-      <%= submit_tag "search", :id => "submitbutton" %>
-      <% end %> 
-    </div>
+  <div class="search-box">
+    <%= form_tag search_path do %> 
+    <%= text_field_tag :term, "Search for a course or lesson", :id => "search_box" %>
+    <%= submit_tag "Go", :id => "submitbutton" %>
+    <% end %> 
+  </div>
 
-
+<BR>
 <table class="gradienttable">
   <tr>
     <th>Category</th>
@@ -39,7 +39,7 @@
           <% end %></center></td>
       <td><%= link_to list.title, course_path(list.id) %></td>
       <td><%= list.user.zipcode %></td>
-      <td><%= list.user.name %></td>
+      <td><%= link_to list.user.name, User.find(list.user.id) %></td>
       <td><% if list.online? %>Yes<% else %>No<% end %></td>
       <td><% if list.in_person? %>Yes<% else %>No<% end %></td>
       <td><%= truncate(list.desc, length: 120) %></td>

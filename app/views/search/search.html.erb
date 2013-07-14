@@ -3,11 +3,45 @@
 
 <h3>Search Results</h3>
 
-<% @results.each do |course| %> 
-<div class="course"> 
-  <h3><%= course.title %> </h3>
-  <p> <%= link_to 'Read More', course_path(course.id) %> </p>
-</div>
-<% end %> 
+<BR>
+<table class="gradienttable">
+  <tr>
+    <th>Category</th>
+    <th>Course</th>
+    <th>Location</th>
+    <th>Taught by</th>
+    <th>Online Lessons</th>
+    <th>In-person Lessons</th>
+    <th>Description</th>
+  </tr>
+
+ <% @results.each do |list| %>
+    <tr>
+      <td><center>
+        <% if list.category == "Music"%>
+          <%= image_tag("music.png", width: '20') %>
+          <% elsif list.category == "DIY"%>
+          <%= image_tag("diy.png", width: '20') %>
+          <% elsif list.category == "Art"%>
+          <%= image_tag("art.png", width: '20') %>
+          <% elsif list.category == "Food"%>
+          <%= image_tag("food.png", width: '20') %>
+          <% elsif list.category == "Tech"%>
+          <%= image_tag("tech.png", width: '20') %>
+          <% elsif list.category == "Sports"%>
+          <%= image_tag("sports.png", width: '20') %>
+          <% end %></center></td>
+      <td><%= link_to list.title, course_path(list.id) %></td>
+      <td><%= list.user.zipcode %></td>
+      <td><%= list.user.name %></td>
+      <td><% if list.online? %>Yes<% else %>No<% end %></td>
+      <td><% if list.in_person? %>Yes<% else %>No<% end %></td>
+      <td><%= truncate(list.desc, length: 120) %></td>
+    </tr>
+  <% end %>
+
+  </table>
+
+  <BR><BR>
 
 </div>
