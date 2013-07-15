@@ -18,4 +18,9 @@ class ApplicationController < ActionController::Base
       edit_user_registration_path
     end 
   end
+
+  def after_update_path_for(user)
+    @user = current_user
+    user_path(@user)
+  end
 end

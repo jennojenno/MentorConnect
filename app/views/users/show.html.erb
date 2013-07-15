@@ -10,28 +10,19 @@
 <div id="mapcontainer"> 
 <div id="userleft">
 
-<h1><%= @user.name%>'s Profile</h1> (<%= link_to "edit", edit_user_registration_path %>)
-
-<p>
-  <b>Registered Email:</b>
-  <%= @user.email %>
-</p>
+<h1><%= @user.name%>'s Profile</h1> <% if current_user == @user %>(<%= link_to "edit", edit_user_registration_path %>)<% end %>
 
 <p>
   <b>About Me:</b>
   <% if @user.bio == nil %>
   <%= link_to "Fill out your bio to show up for Mentors!", edit_user_registration_path %>
   <% else %> 
-  <%= @user.bio %>
+  <%= simple_format(@user.bio) %>
   <% end %>
 </p>
 
 <p>
-  <b>I'm good at:</b>
-  <% if @user.skills == nil %>
-  <%= link_to "Fill out your skills to show up for Mentors!", edit_user_registration_path %>
-  <% else %> 
-  <%= @user.skills %>
+  <b>I'm good at:</b><% if @user.skills == nil %><%= link_to "Fill out your skills to show up for Mentors!", edit_user_registration_path %><% else %> <%= simple_format(@user.skills) %>
   <% end %>
 </p>
 
@@ -45,7 +36,7 @@
   <%= link_to "Log in", new_user_session_path %> or <%= link_to "Sign up", new_user_registration_path %> to send a message </b>
   <% end %>
 </center>
-
+<% if current_user == @user %>
 <h2><%= @user.name%>'s Saved Courses</h2>
 
 <% if @favorites.empty? == false %>
@@ -64,6 +55,7 @@
   <% else %> 
 No saved courses at this time. 
 <% end %> 
+<% end %>
 
 
 
@@ -93,7 +85,10 @@ No saved courses at this time.
 <% else %> 
 No offered courses at this time. 
 <% end %> 
-<h3><%= link_to 'Create a New Course and become a Mentor', new_user_mentoring_path(current_user) %></h3><BR><BR>
+<% if current_user == @user %>
+<h3><%= link_to 'Create a New Course and become a Mentor', new_user_mentoring_path(@user) %></h3>
+<% end %> 
+<BR><BR>
 </div>
 <div id="userright"> <center><i><%= @user.name%> is located near:</i></center>
 <div id="map-canvas"></div>
